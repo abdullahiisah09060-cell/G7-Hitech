@@ -3,283 +3,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G7 HITECH | Professional Technology & Academy Hub</title>
+    <title>G7 HITECH | The Digital Powerhouse</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        primary: '#001f3f', // Deep Navy Blue
-                        secondary: '#D4AF37', // Premium Gold
-                        accent: '#0074D9', // Electric Blue
-                        success: '#00FF41' // Matrix Green
-                    },
-                    animation: {
-                        'gradient-x': 'gradient-x 15s ease infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        'gradient-x': {
-                            '0%, 100%': { 'background-size': '200% 200%', 'background-position': 'left center' },
-                            '50%': { 'background-size': '200% 200%', 'background-position': 'right center' },
-                        },
-                        'float': {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
-                    }
+                    colors: { primary: '#001f3f', secondary: '#D4AF37', accent: '#00D4FF', dark: '#000814' },
+                    animation: { 'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite', 'float': 'translateY(-10px) 3s ease-in-out infinite' }
                 }
             }
         }
     </script>
 
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
-        /* Animated Background */
-        .animated-bg {
-            background: linear-gradient(-45deg, #001f3f, #000b18, #001f3f, #003366);
-            background-size: 400% 400%;
-            animation: gradient-x 15s ease infinite;
+        body { font-family: 'Space Grotesk', sans-serif; background-color: #000814; color: white; scroll-behavior: smooth; }
+        .hero-video-bg {
+            background: linear-gradient(rgba(0,31,63,0.85), rgba(0,8,20,0.95)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover; background-position: center; background-attachment: fixed;
         }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(212, 175, 55, 0.1); }
-        .gold-text { background: linear-gradient(to right, #FFD700, #B8860B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .service-card:hover { transform: translateY(-10px) scale(1.02); border-color: #D4AF37; }
+        .glass-nav { background: rgba(0, 8, 20, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
+        .gold-gradient { background: linear-gradient(90deg, #D4AF37, #FBF5B7, #D4AF37); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .service-card { transition: 0.4s; border: 1px solid rgba(255,255,255,0.05); }
+        .service-card:hover { transform: translateY(-15px); border-color: #D4AF37; background: rgba(212, 175, 55, 0.05); }
+        
+        /* Smooth Scrolling Testimonials */
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .testimonial-track { display: flex; width: calc(250px * 10); animation: scroll 30s linear infinite; }
+        .testimonial-track:hover { animation-play-state: paused; }
     </style>
 </head>
-<body class="bg-primary text-white overflow-x-hidden">
+<body>
 
-    <nav class="fixed top-0 w-full z-[200] glass border-b border-secondary/10 px-6 py-4 flex justify-between items-center">
-        <div class="flex items-center gap-2">
-            <div class="bg-secondary text-primary font-extrabold px-3 py-1 rounded-md italic text-xl shadow-[0_0_15px_rgba(212,175,55,0.4)]">G7</div>
-            <span class="font-bold tracking-widest text-lg uppercase">HITECH</span>
+    <nav class="fixed top-0 w-full z-[1000] glass-nav px-6 py-5 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <div class="bg-secondary text-primary font-black px-4 py-1 rounded-tl-xl rounded-br-xl italic text-2xl">G7</div>
+            <span class="font-bold tracking-widest text-xl uppercase text-white">HITECH</span>
         </div>
         
-        <div class="hidden lg:flex gap-10 text-[11px] font-black uppercase tracking-widest">
-            <a href="#services" class="hover:text-secondary transition-all">Services</a>
-            <a href="#academy" class="hover:text-secondary transition-all">Academy</a>
-            <a href="#projects" class="hover:text-secondary transition-all">Projects</a>
-            <a href="#testimonials" class="hover:text-secondary transition-all">Reviews</a>
-            <a href="#blog" class="hover:text-secondary transition-all">Blog</a>
+        <div class="hidden lg:flex gap-10 text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">
+            <a href="#services" class="hover:text-secondary">Solutions</a>
+            <a href="#academy" class="hover:text-secondary">Academy</a>
+            <a href="#projects" class="hover:text-secondary">Portfolio</a>
+            <a href="#blog" class="hover:text-secondary">Blog</a>
+            <a href="#contact" class="hover:text-secondary">Contact</a>
         </div>
 
-        <div class="flex items-center gap-4">
-            <a href="auth-portal.html" class="bg-secondary text-primary px-6 py-2 rounded-full font-black text-xs hover:shadow-[0_0_20px_#D4AF37] transition-all">SIGN IN</a>
+        <div class="flex items-center gap-6">
+            <div id="g7-clock" class="hidden md:block font-mono text-secondary text-lg font-bold border-l border-white/20 pl-6">00:00:00</div>
+            <a href="auth-portal.html" class="bg-secondary text-primary px-8 py-2.5 rounded-full font-black text-xs hover:shadow-[0_0_25px_#D4AF37] transition">PORTAL</a>
         </div>
     </nav>
 
-    <section class="min-h-screen animated-bg flex items-center justify-center pt-20 px-6 relative">
-        <div class="absolute top-20 left-10 w-64 h-64 bg-secondary/10 rounded-full blur-[120px] animate-pulse"></div>
-        <div class="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-[150px]"></div>
-
-        <div class="max-w-6xl mx-auto text-center z-10">
-            <h1 class="text-6xl md:text-9xl font-extrabold mb-6 leading-tight tracking-tighter">
-                LIMITLESS <br> <span class="gold-text">TECHNOLOGY.</span>
+    <header class="min-h-screen hero-video-bg flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+        
+        <div class="max-w-6xl mx-auto text-center z-10 px-6">
+            <div class="inline-block px-4 py-1 border border-secondary/50 rounded-full mb-8 animate-bounce">
+                <span class="text-secondary text-[10px] font-black uppercase tracking-[0.4em]">Next-Gen Technical Hub</span>
+            </div>
+            <h1 class="text-6xl md:text-[10rem] font-black mb-6 leading-[0.8] tracking-tighter">
+                EVOLVE <br> <span class="gold-gradient">BEYOND.</span>
             </h1>
-            <p class="text-xs md:text-xl font-light tracking-[0.7em] mb-12 text-slate-300 uppercase">Training • Engineering • Software • Academic</p>
+            <p class="text-xs md:text-xl font-medium tracking-[0.5em] mb-16 text-slate-300 uppercase">Hardware • Software • Academy • Engineering</p>
             
-            <div class="flex flex-col md:flex-row justify-center gap-6 mb-20">
-                <a href="#academy" class="bg-white text-primary px-12 py-5 rounded-[2rem] font-black text-lg shadow-2xl hover:bg-secondary transition-all flex items-center justify-center gap-3">
-                    <i class="fas fa-graduation-cap"></i> G7 ACADEMY
+            <div class="flex flex-col md:flex-row justify-center gap-6">
+                <a href="academy.html" class="group bg-white text-primary px-12 py-6 rounded-2xl font-black text-xl hover:bg-secondary transition flex items-center justify-center gap-4 shadow-2xl">
+                    ENROLL NOW <i class="fas fa-arrow-right group-hover:translate-x-2 transition"></i>
                 </a>
-                <a href="#services" class="glass text-secondary px-12 py-5 rounded-[2rem] font-black text-lg border-secondary/50 border-2 hover:bg-secondary hover:text-primary transition-all">
-                    OUR ECOSYSTEM
+                <a href="#services" class="px-12 py-6 rounded-2xl font-black text-xl border-2 border-white/20 hover:border-secondary hover:text-secondary transition backdrop-blur-xl">
+                    EXPLORE SERVICES
                 </a>
             </div>
 
-            <div class="max-w-md mx-auto glass p-6 rounded-[2.5rem] shadow-2xl animate-float">
-                <p class="text-[10px] font-black text-secondary/70 mb-4 uppercase tracking-widest">Global Job Tracker</p>
-                <div class="flex gap-2">
-                    <input type="text" placeholder="Enter Repair ID (G7-00X)" class="flex-1 bg-black/40 p-4 rounded-2xl border border-secondary/20 text-white outline-none focus:border-secondary transition-all">
-                    <button class="bg-secondary text-primary px-6 rounded-2xl font-bold"><i class="fas fa-search"></i></button>
-                </div>
+            <div class="mt-20 max-w-2xl mx-auto bg-white/5 p-2 rounded-3xl border border-white/10 flex">
+                <input type="text" placeholder="Track Repair ID or Search Services..." class="flex-1 bg-transparent px-6 py-4 outline-none text-white font-medium">
+                <button class="bg-secondary text-primary px-10 rounded-2xl font-black uppercase text-xs">Execute</button>
             </div>
         </div>
-    </section>
+    </header>
 
-    <section id="services" class="py-32 bg-white text-primary px-6 rounded-t-[4rem] -mt-10 relative z-20">
+    <section id="services" class="py-32 px-6 bg-dark">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
                 <div>
-                    <span class="text-secondary font-black tracking-widest text-sm uppercase">Full Ecosystem</span>
-                    <h2 class="text-5xl font-extrabold tracking-tighter italic">Professional Services.</h2>
+                    <h2 class="text-6xl font-black italic tracking-tighter mb-4 uppercase">Core <span class="text-secondary">Stack.</span></h2>
+                    <p class="text-slate-500 font-bold uppercase tracking-widest text-xs">The Complete Technical Lifecycle</p>
                 </div>
-                <p class="text-slate-500 max-w-sm text-sm font-medium">16+ Technical departments handling everything from Hardware to High-End Software Development.</p>
+                <button class="bg-white/5 border border-white/10 px-8 py-4 rounded-xl text-xs font-black uppercase tracking-widest hover:text-secondary">View Full Catalog (16+)</button>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <div class="service-card p-10 bg-slate-50 rounded-[3rem] border border-slate-100 transition-all group">
-                    <div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-8 shadow-xl group-hover:bg-secondary transition-all">
-                        <i class="fas fa-network-wired text-secondary group-hover:text-primary text-2xl transition-all"></i>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="service-card p-12 bg-white/5 rounded-[3rem] group">
+                    <div class="w-20 h-20 bg-secondary rounded-3xl flex items-center justify-center mb-10 shadow-[0_15px_40px_rgba(212,175,55,0.3)]">
+                        <i class="fas fa-microchip text-primary text-3xl"></i>
                     </div>
-                    <h3 class="text-2xl font-black mb-4 tracking-tighter uppercase">Networking</h3>
-                    <p class="text-slate-500 text-sm leading-loose">Corporate & Residential WAN/LAN setup, Server configuration, and Maintenance.</p>
+                    <h3 class="text-3xl font-bold mb-4">Hardware Engineering</h3>
+                    <p class="text-slate-400 leading-loose mb-8">Professional repair for Laptops, Printers, and Mobile devices with 48h turnaround.</p>
+                    <ul class="text-[10px] font-black uppercase tracking-widest text-secondary space-y-2">
+                        <li><i class="fas fa-check mr-2"></i> Chip-Level Repair</li>
+                        <li><i class="fas fa-check mr-2"></i> Parts Replacement</li>
+                    </ul>
                 </div>
-
-                <div class="service-card p-10 bg-slate-50 rounded-[3rem] border border-slate-100 transition-all group">
-                    <div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-8 shadow-xl group-hover:bg-secondary transition-all">
-                        <i class="fas fa-laptop-code text-secondary group-hover:text-primary text-2xl"></i>
+                <div class="service-card p-12 bg-white/5 rounded-[3rem] group">
+                    <div class="w-20 h-20 bg-accent rounded-3xl flex items-center justify-center mb-10 shadow-[0_15px_40px_rgba(0,212,255,0.3)]">
+                        <i class="fas fa-video text-primary text-3xl"></i>
                     </div>
-                    <h3 class="text-2xl font-black mb-4 tracking-tighter uppercase">Web/Mobile</h3>
-                    <p class="text-slate-500 text-sm leading-loose">Full-stack professional development using React, Firebase, and Modern UI/UX.</p>
+                    <h3 class="text-3xl font-bold mb-4">CCTV & Smart Security</h3>
+                    <p class="text-slate-400 leading-loose mb-8">IP Camera installation, Solar-powered security, and Remote Mobile Monitoring.</p>
+                    <ul class="text-[10px] font-black uppercase tracking-widest text-accent space-y-2">
+                        <li><i class="fas fa-check mr-2"></i> 24/7 Support</li>
+                        <li><i class="fas fa-check mr-2"></i> Cloud Storage</li>
+                    </ul>
                 </div>
-
-                <div class="service-card p-10 bg-slate-50 rounded-[3rem] border border-slate-100 transition-all group">
-                    <div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-8 shadow-xl group-hover:bg-secondary transition-all">
-                        <i class="fas fa-shield-virus text-secondary group-hover:text-primary text-2xl"></i>
+                <div class="service-card p-12 bg-white/5 rounded-[3rem] group">
+                    <div class="w-20 h-20 bg-white rounded-3xl flex items-center justify-center mb-10 shadow-[0_15px_40px_rgba(255,255,255,0.1)]">
+                        <i class="fas fa-laptop-code text-primary text-3xl"></i>
                     </div>
-                    <h3 class="text-2xl font-black mb-4 tracking-tighter uppercase">CCTV & Security</h3>
-                    <p class="text-slate-500 text-sm leading-loose">Smart surveillance systems, IP cameras, and AI-powered security monitoring.</p>
-                </div>
-
-                <div class="service-card p-10 bg-slate-50 rounded-[3rem] border border-slate-100 transition-all group">
-                    <div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-8 shadow-xl group-hover:bg-secondary transition-all">
-                        <i class="fas fa-graduation-cap text-secondary group-hover:text-primary text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-black mb-4 tracking-tighter uppercase">Academy</h3>
-                    <p class="text-slate-500 text-sm leading-loose">Intensive 100% practical tech training for students and professionals.</p>
+                    <h3 class="text-3xl font-bold mb-4">Software Solutions</h3>
+                    <p class="text-slate-400 leading-loose mb-8">Mobile Apps, School Portals, and Custom Business Management Systems.</p>
+                    <ul class="text-[10px] font-black uppercase tracking-widest text-slate-300 space-y-2">
+                        <li><i class="fas fa-check mr-2"></i> Full Stack Web</li>
+                        <li><i class="fas fa-check mr-2"></i> Database Admin</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="testimonials" class="py-32 px-6 bg-slate-50">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-black text-center mb-20 tracking-tighter italic text-primary">CLIENT VOICES <br> <span class="text-secondary text-lg not-italic tracking-[0.5em] font-light">PROOFS OF EXCELLENCE</span></h2>
             
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-10 rounded-[2.5rem] shadow-xl border-t-4 border-secondary relative">
-                    <div class="flex gap-1 text-secondary mb-6 text-sm">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-slate-600 italic mb-8 leading-relaxed">"G7 Hitech networking training was life-changing. I now handle massive corporate setups in Abuja. The practical is 100/100!"</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center font-bold text-secondary">AM</div>
-                        <div>
-                            <h4 class="font-black text-primary text-sm uppercase">Abdul Musa</h4>
-                            <p class="text-[10px] font-bold text-slate-400">Network Engineer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white p-10 rounded-[2.5rem] shadow-xl border-t-4 border-secondary relative">
-                    <div class="flex gap-1 text-secondary mb-6 text-sm">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-slate-600 italic mb-8 leading-relaxed">"My laptop was dead for months, I took it to G7 and it was fixed in 48 hours. Best repair center in Bida!"</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center font-bold text-secondary">HE</div>
-                        <div>
-                            <h4 class="font-black text-primary text-sm uppercase">Habiba Emmanuel</h4>
-                            <p class="text-[10px] font-bold text-slate-400">Fed Poly Bida Student</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white p-10 rounded-[2.5rem] shadow-xl border-t-4 border-secondary relative">
-                    <div class="flex gap-1 text-secondary mb-6 text-sm">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-slate-600 italic mb-8 leading-relaxed">"The SIWES report automation system is brilliant. It made my project research so smooth. No stress at all."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center font-bold text-secondary">IK</div>
-                        <div>
-                            <h4 class="font-black text-primary text-sm uppercase">Ibrahim K.</h4>
-                            <p class="text-[10px] font-bold text-slate-400">Mechanical Engineering</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-16 text-center">
-                <button class="bg-primary text-white px-10 py-4 rounded-full font-black text-xs hover:bg-secondary hover:text-primary transition-all">LEAVE A RATING</button>
+            <div class="mt-20 text-center">
+                <a href="services.html" class="text-secondary font-black border-b-2 border-secondary pb-2 tracking-[0.3em] uppercase text-xs hover:text-white hover:border-white transition">More Services (Computer Training, SIWES, Research)</a>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-32 px-6 bg-white">
+    <section class="py-20 bg-white text-primary overflow-hidden border-y-8 border-secondary">
+        <h2 class="text-center text-xs font-black uppercase tracking-[0.5em] mb-12 italic">Real Results • Real Voices • 100% Satisfaction</h2>
+        <div class="testimonial-track">
+            <div class="w-[400px] flex-shrink-0 px-8">
+                <div class="bg-slate-100 p-8 rounded-3xl">
+                    <div class="flex text-secondary mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="font-bold italic text-sm mb-4">"G7 Hitech networking training changed my career. Very practical!"</p>
+                    <span class="text-[10px] font-black uppercase">— Musa J, Minna</span>
+                </div>
+            </div>
+            <div class="w-[400px] flex-shrink-0 px-8">
+                <div class="bg-slate-100 p-8 rounded-3xl">
+                    <div class="flex text-secondary mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="font-bold italic text-sm mb-4">"Best repair center. My dead laptop came back to life in 2 days."</p>
+                    <span class="text-[10px] font-black uppercase">— Blessing O, Bida</span>
+                </div>
+            </div>
+             <div class="w-[400px] flex-shrink-0 px-8">
+                <div class="bg-slate-100 p-8 rounded-3xl">
+                    <div class="flex text-secondary mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="font-bold italic text-sm mb-4">"The SIWES report hub saved me so much stress. 10/10."</p>
+                    <span class="text-[10px] font-black uppercase">— Idris K, Fed Poly Bida</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-6xl font-black mb-8 italic">Executed <br> <span class="text-secondary tracking-widest uppercase">Works.</span></h2>
+                <p class="text-slate-400 mb-12 text-lg leading-relaxed">From Federal Institutions to Private Firms, our technical deployments speak for themselves. We build systems that last.</p>
+                <div class="grid grid-cols-2 gap-8 mb-12">
+                    <div><h4 class="text-4xl font-black text-white">500+</h4><p class="text-xs font-bold text-slate-500 uppercase">Projects Fixed</p></div>
+                    <div><h4 class="text-4xl font-black text-white">200+</h4><p class="text-xs font-bold text-slate-500 uppercase">Smart Installs</p></div>
+                </div>
+                <button class="bg-secondary text-primary px-10 py-4 rounded-xl font-black uppercase text-xs shadow-xl shadow-secondary/20">View Case Studies</button>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <img src="https://via.placeholder.com/400x500" class="rounded-[2.5rem] mt-12 border-2 border-white/10 hover:border-secondary transition">
+                <img src="https://via.placeholder.com/400x500" class="rounded-[2.5rem] border-2 border-white/10 hover:border-secondary transition">
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="py-32 bg-white/5 px-6 rounded-[4rem]">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-2xl font-black border-l-8 border-secondary pl-6 mb-16 italic tracking-widest text-primary uppercase">Executed Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="group relative overflow-hidden rounded-[2.5rem] h-64 bg-slate-200">
-                    <img src="https://via.placeholder.com/600x600" class="w-full h-full object-cover group-hover:scale-125 transition-all duration-700">
-                    <div class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all">
-                        <p class="text-white font-black uppercase text-xs tracking-widest">CCTV Network</p>
+            <h2 class="text-4xl font-black mb-16 italic uppercase border-l-8 border-secondary pl-8">G7 Insights.</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <article class="bg-dark rounded-3xl overflow-hidden border border-white/5 hover:border-secondary transition group">
+                    <img src="https://via.placeholder.com/600x400" class="w-full h-56 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition duration-500">
+                    <div class="p-8">
+                        <span class="text-secondary font-black text-[10px] uppercase tracking-widest">Tech Security</span>
+                        <h4 class="text-xl font-bold my-4 leading-tight">Cyber Security for 2026: What you need to know.</h4>
+                        <a href="blog.html" class="text-xs font-black border-b border-white pb-1 uppercase hover:text-secondary hover:border-secondary transition">Read Full Article</a>
                     </div>
-                </div>
+                </article>
                 </div>
         </div>
     </section>
 
-    <div id="chatbot" class="fixed bottom-10 right-10 z-[500]">
-        <div class="absolute -top-1 -right-1 w-4 h-4 bg-success rounded-full animate-ping"></div>
-        <button onclick="toggleBot()" class="bg-secondary text-primary w-20 h-20 rounded-[2rem] shadow-[0_20px_50px_rgba(212,175,55,0.4)] flex items-center justify-center text-3xl border-4 border-primary hover:rotate-12 transition-all">
-            <i class="fas fa-robot"></i>
-        </button>
-
-        <div id="botWindow" class="hidden absolute bottom-24 right-0 w-[350px] h-[500px] bg-white rounded-[3rem] shadow-2xl border-4 border-primary flex flex-col overflow-hidden">
-            <div class="bg-primary p-6 flex justify-between items-center">
-                <div class="flex items-center gap-3">
-                    <div class="w-3 h-3 bg-success rounded-full"></div>
-                    <span class="font-black text-xs tracking-widest uppercase">G7-Bot AI</span>
+    <section id="contact" class="py-32 px-6">
+        <div class="max-w-4xl mx-auto bg-primary rounded-[4rem] p-16 shadow-[0_50px_100px_rgba(0,0,0,0.8)] border border-white/5">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-black italic uppercase">Get in <span class="text-secondary">Touch.</span></h3>
+                <p class="text-slate-400 text-sm mt-4 uppercase tracking-[0.3em]">Bida • Minna • Global</p>
+            </div>
+            <form class="grid gap-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <input type="text" placeholder="Full Name" class="bg-white/5 p-6 rounded-2xl border border-white/10 outline-none focus:border-secondary transition text-white">
+                    <input type="email" placeholder="Email" class="bg-white/5 p-6 rounded-2xl border border-white/10 outline-none focus:border-secondary transition text-white">
                 </div>
-                <button onclick="toggleBot()"><i class="fas fa-times text-white"></i></button>
-            </div>
-            <div id="chatMessages" class="flex-1 p-6 overflow-y-auto space-y-4 text-slate-600 text-sm font-medium italic">
-                <div class="bg-slate-100 p-4 rounded-3xl mr-10 leading-relaxed border-l-4 border-secondary">
-                    Welcome to G7 HITECH. I am your AI assistant. How can we help your tech journey today?
-                </div>
-            </div>
-            <div class="p-4 bg-slate-50 flex gap-2">
-                <input type="text" placeholder="Type here..." class="flex-1 bg-white p-4 rounded-2xl border-none outline-none text-slate-900 text-sm shadow-inner">
-                <button class="bg-primary text-secondary w-12 rounded-2xl shadow-xl"><i class="fas fa-paper-plane"></i></button>
-            </div>
-        </div>
-    </div>
-
-    <section class="py-32 px-6 bg-slate-900">
-        <div class="max-w-5xl mx-auto glass rounded-[4rem] overflow-hidden flex flex-col lg:flex-row shadow-[0_50px_100px_rgba(0,0,0,0.5)]">
-            <div class="p-16 lg:w-2/5 bg-primary text-white border-r border-secondary/20">
-                <h3 class="text-4xl font-black mb-8 leading-none">START A <br> <span class="text-secondary italic uppercase tracking-tighter">PROJECT.</span></h3>
-                <div class="space-y-6 mt-20 text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">
-                    <p class="flex items-center gap-4"><i class="fas fa-phone text-secondary text-lg"></i> +234 903 342 2828</p>
-                    <p class="flex items-center gap-4"><i class="fas fa-envelope text-secondary text-lg"></i> g7hitech@gmail.com</p>
-                    <p class="flex items-center gap-4"><i class="fas fa-map-marker-alt text-secondary text-lg"></i> Bida, Niger State</p>
-                </div>
-            </div>
-            <form class="p-16 lg:w-3/5 bg-white flex flex-col gap-6">
-                <input type="text" placeholder="Full Name" class="p-5 border-b-2 border-slate-100 outline-none focus:border-secondary text-primary font-bold transition-all bg-transparent">
-                <input type="email" placeholder="Email Address" class="p-5 border-b-2 border-slate-100 outline-none focus:border-secondary text-primary font-bold transition-all bg-transparent">
-                <textarea rows="4" placeholder="Your Message / Inquiry" class="p-5 border-b-2 border-slate-100 outline-none focus:border-secondary text-primary font-bold transition-all bg-transparent"></textarea>
-                <button class="bg-primary text-secondary font-black py-6 rounded-2xl shadow-2xl uppercase tracking-[0.5em] hover:bg-black transition-all">Submit Now</button>
+                <textarea rows="5" placeholder="Project Description" class="bg-white/5 p-6 rounded-2xl border border-white/10 outline-none focus:border-secondary transition text-white"></textarea>
+                <button class="bg-secondary text-primary py-6 rounded-2xl font-black uppercase tracking-[0.5em] shadow-2xl hover:scale-105 transition">Submit Request</button>
             </form>
         </div>
     </section>
 
-    <footer class="bg-black py-20 px-6 text-center border-t border-secondary/20 relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-            <div class="grid grid-cols-12 gap-2 h-full">
-                <div class="border-r border-slate-800"></div><div class="border-r border-slate-800"></div><div class="border-r border-slate-800"></div><div class="border-r border-slate-800"></div><div class="border-r border-slate-800"></div><div class="border-r border-slate-800"></div>
-            </div>
+    <footer class="py-20 px-6 text-center border-t border-white/5">
+        <p class="text-secondary font-black text-3xl tracking-[0.8em] italic mb-10">G7 HITECH</p>
+        <div class="flex justify-center gap-12 text-2xl text-slate-500 mb-12">
+            <i class="fab fa-whatsapp hover:text-secondary cursor-pointer transition"></i>
+            <i class="fab fa-instagram hover:text-secondary cursor-pointer transition"></i>
+            <i class="fab fa-linkedin-in hover:text-secondary cursor-pointer transition"></i>
         </div>
-        
-        <div class="flex justify-center gap-10 mb-16 relative z-10">
-            <a href="#" class="text-slate-500 hover:text-secondary text-2xl transition-all"><i class="fab fa-whatsapp"></i></a>
-            <a href="#" class="text-slate-500 hover:text-secondary text-2xl transition-all"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="text-slate-500 hover:text-secondary text-2xl transition-all"><i class="fab fa-instagram"></i></a>
-        </div>
-
-        <p class="text-secondary font-black text-2xl tracking-[0.6em] mb-4 uppercase italic">G7 HITECH</p>
-        <p class="text-[10px] text-slate-500 font-bold uppercase tracking-[0.3em]">&copy; 2026. PROFESSIONAL TECHNICAL HUB. POWERED BY ABDULAHI.</p>
+        <p class="text-[10px] text-slate-600 font-bold uppercase tracking-[0.4em] mb-4">Professionals Only • Built by Abdulahi</p>
+        <p class="text-[8px] text-slate-800 uppercase">&copy; 2026. G7 HITECH CORPORATE.</p>
     </footer>
 
     <script>
-        function toggleBot() {
-            document.getElementById('botWindow').classList.toggle('hidden');
+        // LIVE CLOCK LOGIC
+        function updateClock() {
+            const now = new Date();
+            const time = now.getHours().toString().padStart(2, '0') + ":" + 
+                         now.getMinutes().toString().padStart(2, '0') + ":" + 
+                         now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('g7-clock').innerText = time;
         }
+        setInterval(updateClock, 1000);
+        updateClock();
     </script>
 </body>
 </html>
+                
