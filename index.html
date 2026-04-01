@@ -6,48 +6,104 @@
     <title>G7 HITECH | Global Tech Hub & Academy</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .dark-mode { background-color: #1a202c; color: #f7fafc; }
+        .dark-card { background-color: #2d3748; color: white; }
+        .hero-gradient { background: linear-gradient(135deg, #800000 0%, #000000 100%); }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-900 transition-colors duration-300" id="body">
+<body class="bg-gray-50 text-gray-900 transition-all duration-300" id="mainBody">
 
-    <nav class="flex justify-between items-center p-6 bg-white shadow-sm sticky top-0 z-50">
-        <div class="flex items-center gap-2">
-            <span class="text-2xl font-bold text-red-700">G7 <span class="text-gray-800">HITECH</span></span>
+    <nav class="flex justify-between items-center p-4 bg-white shadow-md sticky top-0 z-50 dark:bg-gray-900">
+        <div class="flex items-center gap-1">
+            <span class="text-2xl font-black text-red-800 italic">G7</span>
+            <span class="text-xl font-bold tracking-tighter">HITECH</span>
         </div>
-        <div class="hidden md:flex gap-8 font-medium">
-            <a href="#services" class="hover:text-red-700">Services</a>
-            <a href="#academy" class="hover:text-red-700">Academy</a>
-            <a href="#projects" class="hover:text-red-700">Project Hub</a>
-        </div>
-        <div class="flex items-center gap-4">
-            <button onclick="toggleDarkMode()" class="p-2 bg-gray-100 rounded-full"><i class="fas fa-moon"></i></button>
-            <button id="loginBtn" class="bg-red-700 text-white px-6 py-2 rounded-lg font-bold hover:bg-red-800 transition">Get Started</button>
+        <div class="flex items-center gap-3">
+            <button onclick="toggleTheme()" class="p-2 rounded-full bg-gray-100 dark:bg-gray-800"><i class="fas fa-moon"></i></button>
+            <button id="authBtn" class="bg-red-700 text-white px-4 py-2 rounded-lg font-bold text-sm">LOGIN</button>
         </div>
     </nav>
 
-    <header class="py-20 px-6 text-center bg-gradient-to-b from-white to-gray-100">
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-6">Expert <span class="text-red-700">Tech Solutions</span> <br> for Everyone.</h1>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-10">From CCTV Installation to Full-Stack Development. We train, we build, and we fix.</p>
-        <div class="flex flex-wrap justify-center gap-4">
-            <button class="bg-gray-900 text-white px-8 py-4 rounded-xl font-bold">Book a Service</button>
-            <button class="bg-white border-2 border-gray-900 px-8 py-4 rounded-xl font-bold">Explore Academy</button>
+    <header class="hero-gradient text-white py-16 px-6 text-center">
+        <h1 class="text-4xl md:text-6xl font-black mb-4">THE TECH EMPIRE.</h1>
+        <p class="text-lg mb-8 opacity-90">Training • Engineering • Software • Academic Hub</p>
+        <div class="flex flex-col gap-3 max-w-xs mx-auto">
+            <button class="bg-white text-red-900 font-bold py-3 rounded-full shadow-lg">EXPLORE ACADEMY</button>
+            <button class="border-2 border-white py-3 rounded-full font-bold">TRACK REPAIR JOB</button>
         </div>
     </header>
 
-    <section id="services" class="py-20 px-6 max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-16 underline decoration-red-700">Our 100/100 Services</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            <div class="p-8 bg-white rounded-2xl shadow-md border-b-4 border-red-700 hover:-translate-y-2 transition">
-                <i class="fas fa-video text-3xl text-red-700 mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">CCTV Installation</h3>
-                <p class="text-gray-600 text-sm">Smart security setups for homes and offices nationwide.</p>
+    <section class="py-12 px-4 max-w-6xl mx-auto">
+        <h2 class="text-2xl font-black text-center mb-10 uppercase tracking-widest">Our Ecosystem</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-red-800 text-center service-card">
+                <i class="fas fa-laptop-code text-red-800 text-2xl mb-2"></i>
+                <h3 class="font-bold text-sm">Programming</h3>
             </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-red-800 text-center service-card">
+                <i class="fas fa-video text-red-800 text-2xl mb-2"></i>
+                <h3 class="font-bold text-sm">CCTV Install</h3>
             </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-red-800 text-center service-card">
+                <i class="fas fa-network-wired text-red-800 text-2xl mb-2"></i>
+                <h3 class="font-bold text-sm">Networking</h3>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-red-800 text-center service-card">
+                <i class="fas fa-file-invoice text-red-800 text-2xl mb-2"></i>
+                <h3 class="font-bold text-sm">SIWES Reports</h3>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-red-800 text-center service-card">
+                <i class="fas fa-microchip text-red-800 text-2xl mb-2"></i>
+                <h3 class="font-bold text-sm">Hardware</h3>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-red-800 text-center service-card">
+                <i class="fas fa-graduation-cap text-red-800 text-2xl mb-2"></i>
+                <h3 class="font-bold text-sm">Project Hub</h3>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-red-800 text-center service-card">
+                <i class="fas fa-tools text-red-800 text-2xl mb-2"></i>
+                <h3 class="font-bold text-sm">Repair Center</h3>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-red-800 text-center service-card">
+                <i class="fas fa-paint-brush text-red-800 text-2xl mb-2"></i>
+                <h3 class="font-bold text-sm">Graphics Design</h3>
+            </div>
+        </div>
     </section>
 
-    <footer class="bg-gray-900 text-white py-12 px-6 text-center">
-        <p>&copy; 2026 G7 HITECH. All Rights Reserved. Built by Abdulahi.</p>
+    <section class="bg-gray-100 py-12 px-6 dark:bg-gray-800">
+        <div class="max-w-md mx-auto bg-white p-8 rounded-3xl shadow-xl dark:bg-gray-700">
+            <h3 class="text-xl font-black mb-4 text-center">Track Your Job</h3>
+            <input type="text" placeholder="Enter Repair ID (e.g. G7-882)" class="w-full p-4 border rounded-xl mb-4 text-gray-900">
+            <button class="w-full bg-black text-white py-4 rounded-xl font-bold">CHECK STATUS</button>
+        </div>
+    </section>
+
+    <footer class="bg-black text-white py-10 px-6 text-center text-sm">
+        <p class="opacity-70 mb-2">G7 HITECH | Professional Technical Services</p>
+        <p class="font-bold">Built for Everyone • Powered by Abdulahi</p>
     </footer>
 
-    <script type="module" src="js/app.js"></script>
+    <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-80 hidden flex items-center justify-center p-6 z-[100]">
+        <div class="bg-white w-full max-w-sm p-8 rounded-3xl text-center">
+            <h2 class="text-2xl font-black mb-6">Welcome to G7</h2>
+            <button id="googleLogin" class="w-full border-2 border-gray-200 py-4 rounded-xl flex items-center justify-center gap-3 font-bold mb-4">
+                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/action/google.svg" width="20"> Continue with Google
+            </button>
+            <p class="text-xs text-gray-500">100% Secure Access • Global Hub</p>
+            <button onclick="closeModal()" class="mt-6 text-red-800 font-bold text-sm">CLOSE</button>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+    <script>
+        function toggleTheme() {
+            document.getElementById('mainBody').classList.toggle('dark-mode');
+        }
+        const modal = document.getElementById('loginModal');
+        document.getElementById('authBtn').onclick = () => modal.classList.remove('hidden');
+        function closeModal() { modal.classList.add('hidden'); }
+    </script>
 </body>
 </html>
