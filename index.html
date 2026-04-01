@@ -3,107 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G7 HITECH | Global Tech Hub & Academy</title>
+    <title>G7 HITECH | Global Technology Hub & Academy</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .dark-mode { background-color: #1a202c; color: #f7fafc; }
-        .dark-card { background-color: #2d3748; color: white; }
-        .hero-gradient { background: linear-gradient(135deg, #800000 0%, #000000 100%); }
+        html { scroll-behavior: smooth; }
+        .hero-bg { background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; }
+        .glass { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .service-card:hover { transform: translateY(-10px); border-color: #b91c1c; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 transition-all duration-300" id="mainBody">
+<body class="bg-gray-50 text-gray-900 font-sans">
 
-    <nav class="flex justify-between items-center p-4 bg-white shadow-md sticky top-0 z-50 dark:bg-gray-900">
+    <nav class="flex justify-between items-center p-5 bg-white shadow-xl sticky top-0 z-[100]">
         <div class="flex items-center gap-1">
-            <span class="text-2xl font-black text-red-800 italic">G7</span>
+            <span class="text-3xl font-black text-red-700 italic">G7</span>
             <span class="text-xl font-bold tracking-tighter">HITECH</span>
         </div>
-        <div class="flex items-center gap-3">
-            <button onclick="toggleTheme()" class="p-2 rounded-full bg-gray-100 dark:bg-gray-800"><i class="fas fa-moon"></i></button>
-            <button id="authBtn" class="bg-red-700 text-white px-4 py-2 rounded-lg font-bold text-sm">LOGIN</button>
+        <div class="hidden lg:flex gap-6 text-sm font-bold uppercase">
+            <a href="#services" class="hover:text-red-700">Services</a>
+            <a href="#academy" class="hover:text-red-700">Academy</a>
+            <a href="#portfolio" class="hover:text-red-700">Work</a>
+            <a href="#blog" class="hover:text-red-700">Blog</a>
+            <a href="#contact" class="hover:text-red-700">Contact</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <button id="authBtn" class="bg-red-700 text-white px-5 py-2 rounded-full font-bold text-sm shadow-lg hover:bg-red-800 transition">LOGIN</button>
         </div>
     </nav>
 
-    <header class="hero-gradient text-white py-16 px-6 text-center">
-        <h1 class="text-4xl md:text-6xl font-black mb-4">THE TECH EMPIRE.</h1>
-        <p class="text-lg mb-8 opacity-90">Training • Engineering • Software • Academic Hub</p>
-        <div class="flex flex-col gap-3 max-w-xs mx-auto">
-            <button class="bg-white text-red-900 font-bold py-3 rounded-full shadow-lg">EXPLORE ACADEMY</button>
-            <button class="border-2 border-white py-3 rounded-full font-bold">TRACK REPAIR JOB</button>
+    <header class="hero-bg text-white py-24 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">INNOVATION <br><span class="text-red-600">WITHOUT BORDERS.</span></h1>
+            <p class="text-lg md:text-xl mb-10 opacity-80 uppercase tracking-widest font-light">Training • Engineering • Software • Academic Hub</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#services" class="bg-red-700 text-white px-10 py-4 rounded-xl font-bold text-lg shadow-2xl">Get a Service</a>
+                <a href="#academy" class="bg-white text-black px-10 py-4 rounded-xl font-bold text-lg shadow-2xl">Join Academy</a>
+            </div>
+            <div class="mt-16 glass max-w-lg mx-auto p-4 rounded-2xl">
+                <p class="text-sm font-bold mb-3">TRACK YOUR REPAIR/PROJECT STATUS</p>
+                <div class="flex gap-2">
+                    <input type="text" id="trackInput" placeholder="Enter ID (e.g. G7-991)" class="flex-1 p-3 rounded-lg text-black outline-none">
+                    <button onclick="checkStatus()" class="bg-red-700 px-6 py-3 rounded-lg font-bold"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
         </div>
     </header>
 
-    <section class="py-12 px-4 max-w-6xl mx-auto">
-        <h2 class="text-2xl font-black text-center mb-10 uppercase tracking-widest">Our Ecosystem</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-red-800 text-center service-card">
-                <i class="fas fa-laptop-code text-red-800 text-2xl mb-2"></i>
-                <h3 class="font-bold text-sm">Programming</h3>
+    <section id="services" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-black uppercase italic mb-2">Our 100/100 Ecosystem</h2>
+            <div class="h-1 w-20 bg-red-700 mx-auto"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div class="service-card p-8 bg-white rounded-3xl shadow-lg border-2 border-transparent transition-all">
+                <i class="fas fa-home text-red-700 text-3xl mb-4"></i>
+                <h3 class="font-black text-lg mb-2 uppercase">Home Coach</h3>
+                <p class="text-sm text-gray-500">Private computer training sessions in your comfort.</p>
             </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-red-800 text-center service-card">
-                <i class="fas fa-video text-red-800 text-2xl mb-2"></i>
-                <h3 class="font-bold text-sm">CCTV Install</h3>
+            <div class="service-card p-8 bg-white rounded-3xl shadow-lg border-2 border-transparent transition-all">
+                <i class="fas fa-network-wired text-red-700 text-3xl mb-4"></i>
+                <h3 class="font-black text-lg mb-2 uppercase">Network Install</h3>
+                <p class="text-sm text-gray-500">Corporate & residential network configuration.</p>
             </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-red-800 text-center service-card">
-                <i class="fas fa-network-wired text-red-800 text-2xl mb-2"></i>
-                <h3 class="font-bold text-sm">Networking</h3>
+            <div class="service-card p-8 bg-white rounded-3xl shadow-lg border-2 border-transparent transition-all">
+                <i class="fas fa-code text-red-700 text-3xl mb-4"></i>
+                <h3 class="font-black text-lg mb-2 uppercase">Software Dev</h3>
+                <p class="text-sm text-gray-500">Custom web and mobile application building.</p>
             </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-red-800 text-center service-card">
-                <i class="fas fa-file-invoice text-red-800 text-2xl mb-2"></i>
-                <h3 class="font-bold text-sm">SIWES Reports</h3>
+            <div class="service-card p-8 bg-white rounded-3xl shadow-lg border-2 border-transparent transition-all">
+                <i class="fas fa-video text-red-700 text-3xl mb-4"></i>
+                <h3 class="font-black text-lg mb-2 uppercase">CCTV Smart</h3>
+                <p class="text-sm text-gray-500">Advanced security surveillance & maintenance.</p>
             </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-red-800 text-center service-card">
-                <i class="fas fa-microchip text-red-800 text-2xl mb-2"></i>
-                <h3 class="font-bold text-sm">Hardware</h3>
+            <div class="service-card p-8 bg-white rounded-3xl shadow-lg border-2 border-transparent transition-all">
+                <i class="fas fa-laptop-medical text-red-700 text-3xl mb-4"></i>
+                <h3 class="font-black text-lg mb-2 uppercase">Repair Center</h3>
+                <p class="text-sm text-gray-500">Hardware fixing and software maintenance.</p>
             </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-red-800 text-center service-card">
-                <i class="fas fa-graduation-cap text-red-800 text-2xl mb-2"></i>
-                <h3 class="font-bold text-sm">Project Hub</h3>
+            <div class="service-card p-8 bg-white rounded-3xl shadow-lg border-2 border-transparent transition-all">
+                <i class="fas fa-graduation-cap text-red-700 text-3xl mb-4"></i>
+                <h3 class="font-black text-lg mb-2 uppercase">Academic Hub</h3>
+                <p class="text-sm text-gray-500">SIWES reports & Final year project research.</p>
             </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-red-800 text-center service-card">
-                <i class="fas fa-tools text-red-800 text-2xl mb-2"></i>
-                <h3 class="font-bold text-sm">Repair Center</h3>
+            <div class="service-card p-8 bg-white rounded-3xl shadow-lg border-2 border-transparent transition-all">
+                <i class="fas fa-brush text-red-700 text-3xl mb-4"></i>
+                <h3 class="font-black text-lg mb-2 uppercase">Graphics Design</h3>
+                <p class="text-sm text-gray-500">Professional branding, logos, and UI/UX.</p>
             </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-red-800 text-center service-card">
-                <i class="fas fa-paint-brush text-red-800 text-2xl mb-2"></i>
-                <h3 class="font-bold text-sm">Graphics Design</h3>
+            <div class="service-card p-8 bg-white rounded-3xl shadow-lg border-2 border-transparent transition-all">
+                <i class="fas fa-shopping-cart text-red-700 text-3xl mb-4"></i>
+                <h3 class="font-black text-lg mb-2 uppercase">Online Reg</h3>
+                <p class="text-sm text-gray-500">School portal payments & form registrations.</p>
             </div>
         </div>
     </section>
 
-    <section class="bg-gray-100 py-12 px-6 dark:bg-gray-800">
-        <div class="max-w-md mx-auto bg-white p-8 rounded-3xl shadow-xl dark:bg-gray-700">
-            <h3 class="text-xl font-black mb-4 text-center">Track Your Job</h3>
-            <input type="text" placeholder="Enter Repair ID (e.g. G7-882)" class="w-full p-4 border rounded-xl mb-4 text-gray-900">
-            <button class="w-full bg-black text-white py-4 rounded-xl font-bold">CHECK STATUS</button>
+    <section id="portfolio" class="py-20 bg-gray-900 text-white px-6">
+        <h2 class="text-3xl font-black text-center mb-12 uppercase italic">Executed Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
+            <img src="https://via.placeholder.com/400x300" class="rounded-2xl hover:opacity-50 transition cursor-pointer" alt="CCTV Job">
+            <img src="https://via.placeholder.com/400x300" class="rounded-2xl hover:opacity-50 transition cursor-pointer" alt="Web Project">
+            <img src="https://via.placeholder.com/400x300" class="rounded-2xl hover:opacity-50 transition cursor-pointer" alt="Network Setup">
+            <img src="https://via.placeholder.com/400x300" class="rounded-2xl hover:opacity-50 transition cursor-pointer" alt="Graphic Design">
         </div>
     </section>
 
-    <footer class="bg-black text-white py-10 px-6 text-center text-sm">
-        <p class="opacity-70 mb-2">G7 HITECH | Professional Technical Services</p>
-        <p class="font-bold">Built for Everyone • Powered by Abdulahi</p>
+    <section class="py-20 px-6 max-w-5xl mx-auto">
+        <h2 class="text-3xl font-black text-center mb-12 italic uppercase">What Clients Say</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-gray-100 p-8 rounded-3xl border-l-8 border-red-700">
+                <p class="italic mb-4 text-gray-600">"G7 Hitech handled our office CCTV and Network. They are professionals. Fast and reliable!"</p>
+                <p class="font-bold">- Mr. Isah, Bida</p>
+            </div>
+            <div class="bg-gray-100 p-8 rounded-3xl border-l-8 border-red-700">
+                <p class="italic mb-4 text-gray-600">"The SIWES report they helped me with was 100% standard. My supervisor was impressed."</p>
+                <p class="font-bold">- Halimat, Student</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="py-20 px-6 bg-white">
+        <h2 class="text-3xl font-black text-center mb-12 uppercase">Hitech Blog</h2>
+        <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <article class="group cursor-pointer">
+                <div class="overflow-hidden rounded-2xl mb-4"><img src="https://via.placeholder.com/500x300" class="group-hover:scale-110 transition duration-500"></div>
+                <h4 class="font-black text-xl mb-2">Top 5 Security Tips for 2026</h4>
+                <p class="text-gray-500 text-sm">Learn how to protect your digital identity...</p>
+            </article>
+            <article class="group cursor-pointer">
+                <div class="overflow-hidden rounded-2xl mb-4"><img src="https://via.placeholder.com/500x300" class="group-hover:scale-110 transition duration-500"></div>
+                <h4 class="font-black text-xl mb-2">Why Your Laptop is Slow</h4>
+                <p class="text-gray-500 text-sm">Practical steps to boost your PC speed...</p>
+            </article>
+            <article class="group cursor-pointer">
+                <div class="overflow-hidden rounded-2xl mb-4"><img src="https://via.placeholder.com/500x300" class="group-hover:scale-110 transition duration-500"></div>
+                <h4 class="font-black text-xl mb-2">Future of Blockchain</h4>
+                <p class="text-gray-500 text-sm">Understanding Web3 and Decentralization...</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 px-6 bg-gray-50">
+        <div class="max-w-4xl mx-auto bg-white rounded-[40px] shadow-2xl overflow-hidden flex flex-col md:flex-row">
+            <div class="bg-red-700 text-white p-12 md:w-1/3">
+                <h3 class="text-2xl font-black mb-6">Contact Info</h3>
+                <p class="mb-4"><i class="fas fa-phone mr-2"></i> +234 903 342 2828</p>
+                <p class="mb-4"><i class="fas fa-envelope mr-2"></i> g7technology@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt mr-2"></i> Fed Poly Bida, Niger State</p>
+            </div>
+            <form class="p-12 md:w-2/3 grid gap-4">
+                <input type="text" placeholder="Full Name" class="p-4 border rounded-xl outline-none focus:border-red-700">
+                <input type="email" placeholder="Email Address" class="p-4 border rounded-xl outline-none focus:border-red-700">
+                <textarea placeholder="Your Message" rows="4" class="p-4 border rounded-xl outline-none focus:border-red-700"></textarea>
+                <button class="bg-black text-white font-black py-4 rounded-xl uppercase tracking-widest hover:bg-red-700 transition">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-black text-white py-12 px-6 text-center border-t border-gray-800">
+        <div class="flex justify-center gap-6 mb-8 text-2xl text-gray-400">
+            <i class="fab fa-facebook hover:text-red-700 cursor-pointer"></i>
+            <i class="fab fa-instagram hover:text-red-700 cursor-pointer"></i>
+            <i class="fab fa-whatsapp hover:text-red-700 cursor-pointer"></i>
+            <i class="fab fa-linkedin hover:text-red-700 cursor-pointer"></i>
+        </div>
+        <p class="font-black text-xl mb-2 italic text-red-700 uppercase">G7 HITECH Empire</p>
+        <p class="text-gray-500 text-sm uppercase tracking-widest">Training • Technical • Academic • Software</p>
+        <p class="mt-10 text-xs opacity-50">&copy; 2026 G7 HITECH. Built by Abdulahi.</p>
     </footer>
 
-    <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-80 hidden flex items-center justify-center p-6 z-[100]">
-        <div class="bg-white w-full max-w-sm p-8 rounded-3xl text-center">
-            <h2 class="text-2xl font-black mb-6">Welcome to G7</h2>
-            <button id="googleLogin" class="w-full border-2 border-gray-200 py-4 rounded-xl flex items-center justify-center gap-3 font-bold mb-4">
+    <div id="authModal" class="fixed inset-0 bg-black/90 hidden flex items-center justify-center p-4 z-[200]">
+        <div class="bg-white p-10 rounded-[40px] max-w-sm w-full text-center shadow-2xl relative">
+            <button onclick="toggleModal()" class="absolute top-6 right-6 text-gray-400 hover:text-black"><i class="fas fa-times text-xl"></i></button>
+            <h2 class="text-3xl font-black mb-2 uppercase italic text-red-700">G7 HUB</h2>
+            <p class="text-gray-500 text-sm mb-8">Access your courses & wallet</p>
+            <button id="googleLogin" class="w-full flex items-center justify-center gap-3 border-2 border-gray-200 py-4 rounded-2xl font-black text-sm hover:bg-gray-50 transition">
                 <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/action/google.svg" width="20"> Continue with Google
             </button>
-            <p class="text-xs text-gray-500">100% Secure Access • Global Hub</p>
-            <button onclick="closeModal()" class="mt-6 text-red-800 font-bold text-sm">CLOSE</button>
+            <p class="mt-6 text-[10px] text-gray-400 uppercase tracking-widest leading-relaxed">By logging in, you agree to our Terms of Professional Service.</p>
         </div>
     </div>
 
     <script type="module" src="app.js"></script>
     <script>
-        function toggleTheme() {
-            document.getElementById('mainBody').classList.toggle('dark-mode');
+        function toggleModal() { document.getElementById('authModal').classList.toggle('hidden'); }
+        document.getElementById('authBtn').onclick = toggleModal;
+        
+        function checkStatus() {
+            const val = document.getElementById('trackInput').value;
+            if(!val) return alert("Please enter your Job ID!");
+            // Logic handled in app.js
         }
-        const modal = document.getElementById('loginModal');
-        document.getElementById('authBtn').onclick = () => modal.classList.remove('hidden');
-        function closeModal() { modal.classList.add('hidden'); }
     </script>
 </body>
 </html>
