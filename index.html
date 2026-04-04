@@ -2,228 +2,220 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G7 HITECH | Global Technology & Research Center</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>G7 HITECH | Advanced Technology, Research & Global Academy</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
     <style>
         :root {
-            --primary: #001f3f; 
-            --accent: #FFD700;  
-            --text-light: #f4f4f4;
-            --glass: rgba(255, 255, 255, 0.07);
-            --gold-gradient: linear-gradient(135deg, #FFD700, #B8860B);
+            --bg: #000b18;
+            --surface: #00162d;
+            --accent: #FFD700;
+            --accent-dim: #b8860b;
+            --text-main: #ffffff;
+            --text-dim: #a0aec0;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 215, 0, 0.15);
         }
 
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body {
-            background-color: var(--primary);
-            color: var(--text-light);
-            font-family: 'Open Sans', sans-serif;
-            margin: 0; padding: 0;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background: var(--bg); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
 
-        h1, h2, h3 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
-
-        /* --- PREMIUM NAVIGATION --- */
-        nav.top-bar {
-            padding: 15px 20px;
+        /* --- LOGO & HEADER --- */
+        header {
+            padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
-            background: rgba(0, 31, 63, 0.9);
-            backdrop-filter: blur(15px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--glass);
-        }
-
-        .logo-text { font-weight: 800; color: var(--accent); font-size: 1.2rem; }
-
-        /* --- HERO & TRACKER --- */
-        .hero {
-            padding: 100px 20px 60px;
-            text-align: center;
-            background: radial-gradient(circle at center, #003366 0%, #001f3f 100%);
-        }
-
-        .hero h1 { font-size: 2.2rem; margin: 0; line-height: 1.2; }
-        .hero span { color: var(--accent); }
-
-        .tracker-container {
-            margin-top: 40px;
-            background: var(--glass);
-            padding: 25px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .input-group {
-            display: flex;
-            background: white;
-            border-radius: 50px;
-            padding: 5px;
-            overflow: hidden;
-        }
-
-        .input-group input {
-            flex: 1; border: none; padding: 15px 20px; outline: none; font-size: 1rem;
-        }
-
-        .btn-track {
-            background: var(--gold-gradient);
-            border: none; padding: 0 25px; border-radius: 50px;
-            color: var(--primary); font-weight: 800; cursor: pointer;
-        }
-
-        /* --- LIVE STATS --- */
-        .stats-bar {
-            display: flex; justify-content: space-around; padding: 20px 0;
-            background: rgba(255,255,255,0.03); margin: 20px; border-radius: 15px;
-        }
-        .stat-item b { display: block; color: var(--accent); font-size: 1.4rem; }
-        .stat-item span { font-size: 10px; opacity: 0.7; }
-
-        /* --- SERVICES GRID --- */
-        .section-title { text-align: center; margin-bottom: 30px; }
-        .services-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 20px;
-        }
-
-        .s-card {
-            background: var(--glass);
-            padding: 30px 15px;
-            border-radius: 15px;
-            text-align: center;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: 0.4s;
-        }
-        .s-card i { font-size: 2rem; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 15px; }
-        .s-card h3 { font-size: 0.75rem; margin: 0; color: #ccc; }
-
-        /* --- TESTIMONY SLIDER --- */
-        .swiper { width: 100%; padding: 40px 20px; }
-        .swiper-slide {
-            background: rgba(255,215,0,0.05);
-            padding: 30px; border-radius: 20px; border: 1px solid var(--glass);
-        }
-
-        /* --- FOOTER NAV --- */
-        .dock {
-            position: fixed; bottom: 20px; left: 5%; width: 90%;
-            background: rgba(0, 31, 63, 0.8);
+            background: rgba(0, 11, 24, 0.9);
             backdrop-filter: blur(20px);
-            display: flex; justify-content: space-around;
-            padding: 15px; border-radius: 30px;
-            border: 1px solid var(--glass); z-index: 2000;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
         }
-        .dock i { font-size: 1.4rem; color: #888; position: relative; }
-        .active-tab { color: var(--accent) !important; }
-        .dot { height: 8px; width: 8px; background: red; border-radius: 50%; position: absolute; top: -2px; right: -5px; border: 2px solid var(--primary); }
+
+        .brand { font-family: 'Syncopate', sans-serif; color: var(--accent); font-size: 1.1rem; letter-spacing: 2px; }
+
+        /* --- HERO & UNIVERSAL SEARCH --- */
+        .hero-pro {
+            padding: 60px 20px;
+            text-align: center;
+            background: radial-gradient(circle at top right, #002b5c, transparent);
+        }
+
+        .hero-pro h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 15px; }
+        .hero-pro h1 span { color: var(--accent); }
+        .hero-pro p { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 35px; }
+
+        .mega-search {
+            background: var(--surface);
+            padding: 8px;
+            border-radius: 50px;
+            display: flex;
+            border: 1px solid var(--border);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.1);
+        }
+
+        .mega-search input {
+            background: transparent; border: none; color: white; padding: 12px 20px; flex: 1; outline: none; font-size: 0.9rem;
+        }
+
+        .mega-search button {
+            background: var(--accent); color: var(--bg); border: none; padding: 12px 25px; border-radius: 50px; font-weight: 800; cursor: pointer;
+        }
+
+        /* --- DYNAMIC SERVICE GRID --- */
+        .section-tag { color: var(--accent); font-size: 0.7rem; letter-spacing: 3px; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 10px; text-align: center; }
+        .grid-container { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 20px; }
+
+        .service-box {
+            background: var(--surface);
+            padding: 25px 15px;
+            border-radius: 15px;
+            border: 1px solid var(--glass);
+            transition: 0.3s;
+        }
+
+        .service-box i { font-size: 1.5rem; color: var(--accent); margin-bottom: 15px; display: block; }
+        .service-box h3 { font-size: 0.8rem; font-weight: 700; margin-bottom: 5px; }
+        .service-box p { font-size: 0.65rem; color: var(--text-dim); }
+
+        /* --- PROJECT PREVIEW (BLOCKED DOWNLOAD) --- */
+        .project-scroll { display: flex; overflow-x: auto; gap: 15px; padding: 0 20px 20px; scrollbar-width: none; }
+        .project-card {
+            min-width: 200px; background: var(--surface); border-radius: 12px; overflow: hidden; border: 1px solid var(--glass);
+        }
+        .proj-img { height: 120px; background: #002b5c; display: flex; align-items: center; justify-content: center; position: relative; }
+        .lock-overlay { position: absolute; top: 10px; right: 10px; font-size: 0.7rem; background: rgba(0,0,0,0.5); padding: 4px 8px; border-radius: 4px; }
+        .proj-info { padding: 12px; }
+        .proj-info h4 { font-size: 0.8rem; margin-bottom: 5px; }
+
+        /* --- BLOG / TESTIMONY --- */
+        .insight-box { margin: 20px; padding: 20px; background: var(--glass); border-radius: 20px; border-left: 3px solid var(--accent); }
+
+        /* --- FLOATING APP NAV --- */
+        .app-dock {
+            position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%);
+            width: 90%; background: rgba(0, 22, 45, 0.85); backdrop-filter: blur(25px);
+            padding: 15px; border-radius: 100px; display: flex; justify-content: space-around;
+            border: 1px solid var(--border); z-index: 2000;
+        }
+        .app-dock a { color: var(--text-dim); text-decoration: none; font-size: 1.3rem; position: relative; }
+        .app-dock a.active { color: var(--accent); }
+        .notif-dot { width: 8px; height: 8px; background: #ff3b3b; border-radius: 50%; position: absolute; top: -2px; right: -2px; border: 2px solid var(--bg); }
 
     </style>
 </head>
 <body>
 
-    <nav class="top-bar">
-        <div class="logo-text">G7 <span style="color:white">HITECH</span></div>
-        <div id="user-status"><i class="fa-solid fa-circle-check" style="color: var(--accent)"></i></div>
-    </nav>
+    <header>
+        <div class="brand">G7 HITECH</div>
+        <div style="font-size: 1.2rem; color: var(--accent);"><i class="fa-solid fa-bolt-lightning"></i></div>
+    </header>
 
-    <section class="hero">
-        <h1 data-aos="fade-up">Precision <span>Engineering</span><br>& Research</h1>
-        <p data-aos="fade-up" data-aos-delay="200">Bida's #1 Most Trusted Technology Hub</p>
+    <section class="hero-pro">
+        <span class="section-tag" data-aos="fade-down">Future-Proof Technology</span>
+        <h1 data-aos="fade-up">Empowering <span>Global</span> Digital Innovation.</h1>
+        <p data-aos="fade-up" data-aos-delay="100">Advanced Hardware Lab • Programming Academy • Research Center</p>
 
-        <div class="tracker-container" data-aos="zoom-in">
-            <div class="input-group">
-                <input type="text" id="trackInput" placeholder="Enter Work ID (e.g G7-502)">
-                <button class="btn-track" onclick="handleTrack()"><i class="fa-solid fa-bolt"></i></button>
-            </div>
-            <p style="font-size: 11px; margin-top: 15px;">Tracking Status of: <span id="live-typing" style="color:var(--accent)">Laptops, Projects, CCTV...</span></p>
+        <div class="mega-search" data-aos="zoom-in">
+            <input type="text" id="universalSearch" placeholder="Track Job ID, Research Topics, or Tools...">
+            <button onclick="globalSearch()"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
     </section>
 
-    <div class="stats-bar" data-aos="fade-in">
-        <div class="stat-item"><b>1.2k+</b><span>Repairs</span></div>
-        <div class="stat-item"><b>450+</b><span>Graduates</span></div>
-        <div class="stat-item"><b>99%</b><span>Success</span></div>
+    <div style="display: flex; justify-content: space-around; padding: 10px 0; border-bottom: 1px solid var(--glass);">
+        <div style="text-align: center;"><b style="color:var(--accent)">1.2k+</b><br><small style="font-size:0.6rem; opacity:0.6;">Active Jobs</small></div>
+        <div style="text-align: center;"><b style="color:var(--accent)">500+</b><br><small style="font-size:0.6rem; opacity:0.6;">Research Papers</small></div>
+        <div style="text-align: center;"><b style="color:var(--accent)">24/7</b><br><small style="font-size:0.6rem; opacity:0.6;">Tech Support</small></div>
     </div>
 
-    <div class="section-title">
-        <h2>Expertise <span>Units</span></h2>
-    </div>
-
-    <div class="services-grid">
-        <div class="s-card" data-aos="flip-left">
-            <i class="fa-solid fa-shield-halved"></i>
-            <h3>CCTV & Biometrics</h3>
-        </div>
-        <div class="s-card" data-aos="flip-right">
-            <i class="fa-solid fa-network-wired"></i>
-            <h3>Fiber Networking</h3>
-        </div>
-        <div class="s-card" data-aos="flip-left">
-            <i class="fa-solid fa-code"></i>
-            <h3>Software Dev</h3>
-        </div>
-        <div class="s-card" data-aos="flip-right">
-            <i class="fa-solid fa-microchip"></i>
-            <h3>Hardware Lab</h3>
-        </div>
-        <div class="s-card" data-aos="flip-left">
-            <i class="fa-solid fa-file-invoice"></i>
-            <h3>SIWES Technical</h3>
-        </div>
-        <div class="s-card" data-aos="flip-right">
-            <i class="fa-solid fa-house-laptop"></i>
-            <h3>Home Coaching</h3>
-        </div>
-    </div>
-
-    <div class="section-title">
-        <h2>Client <span>Testimonies</span></h2>
-    </div>
-    
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <p>"G7 Hitech is the only place in Bida where I trust my expensive gadgets."</p>
-                <small><b>- Dr. Ibrahim</b> | Bida Poly</small>
+    <div style="padding-top: 40px;">
+        <span class="section-tag">Our Ecosystem</span>
+        <div class="grid-container">
+            <div class="service-box" data-aos="fade-up">
+                <i class="fa-solid fa-microchip"></i>
+                <h3>Hardware Lab</h3>
+                <p>Advanced repairs, upgrades & component maintenance.</p>
             </div>
-            <div class="swiper-slide">
-                <p>"The Research and Project Hub helped me finish my HND project in record time."</p>
-                <small><b>- Sarah A.</b> | Computer Science</small>
+            <div class="service-box" data-aos="fade-up" data-aos-delay="100">
+                <i class="fa-solid fa-terminal"></i>
+                <h3>Programming</h3>
+                <p>Software dev & full-stack engineering training.</p>
+            </div>
+            <div class="service-box" data-aos="fade-up">
+                <i class="fa-solid fa-video"></i>
+                <h3>CCTV Systems</h3>
+                <p>Professional security & biometric installations.</p>
+            </div>
+            <div class="service-box" data-aos="fade-up" data-aos-delay="100">
+                <i class="fa-solid fa-file-signature"></i>
+                <h3>Research Hub</h3>
+                <p>Technical writing & final year project support.</p>
             </div>
         </div>
     </div>
 
-    <div style="height: 120px;"></div> <div class="dock">
-        <i class="fa-solid fa-house-chimney active-tab"></i>
-        <i class="fa-solid fa-store"></i>
-        <i class="fa-solid fa-graduation-cap"></i>
-        <i class="fa-solid fa-comment-dots"><span class="dot"></span></i>
-        <i class="fa-solid fa-circle-user"></i>
+    <div>
+        <span class="section-tag">Case Studies & Projects</span>
+        <div class="project-scroll">
+            <div class="project-card">
+                <div class="proj-img">
+                    <i class="fa-solid fa-wifi" style="font-size: 2rem; opacity: 0.3;"></i>
+                    <div class="lock-overlay"><i class="fa-solid fa-lock"></i> Premium</div>
+                </div>
+                <div class="proj-info">
+                    <h4>Fiber Optic Design</h4>
+                    <p style="font-size: 0.6rem; opacity: 0.5;">Networking / Infrastructure</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="proj-img">
+                    <i class="fa-solid fa-code" style="font-size: 2rem; opacity: 0.3;"></i>
+                    <div class="lock-overlay"><i class="fa-solid fa-lock"></i> Premium</div>
+                </div>
+                <div class="proj-info">
+                    <h4>E-Commerce API</h4>
+                    <p style="font-size: 0.6rem; opacity: 0.5;">Backend / Security</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="insight-box" data-aos="fade-right">
+        <small style="color:var(--accent)">TECH BLOG</small>
+        <h4 style="margin: 5px 0;">Why CCTV Biometrics is the future of Home Security.</h4>
+        <p style="font-size: 0.7rem; opacity: 0.7;">Read how G7 Hitech is securing Bida homes with AI-integrated security systems...</p>
+    </div>
+
+    <div style="height: 120px;"></div>
+
+    <div class="app-dock">
+        <a href="index.html" class="active"><i class="fa-solid fa-house-simple"></i></a>
+        <a href="marketplace.html"><i class="fa-solid fa-briefcase"></i></a>
+        <a href="academy.html"><i class="fa-solid fa-graduation-cap"></i></a>
+        <a href="chat.html"><i class="fa-solid fa-comment-lines"></i><span class="notif-dot"></span></a>
+        <a href="auth.html"><i class="fa-solid fa-user-gear"></i></a>
     </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
         AOS.init({ duration: 800, once: true });
-        
-        var swiper = new Swiper(".mySwiper", {
-            autoplay: { delay: 3000 },
-            loop: true,
-        });
 
-        function handleTrack() {
-            const val = document.getElementById('trackInput').value;
-            if(val) alert('Connecting to G7 Secure Database for: ' + val);
+        function globalSearch() {
+            const query = document.getElementById('universalSearch').value;
+            if(query) {
+                // If ID starts with G7, go to tracker
+                if(query.toUpperCase().startsWith('G7')) {
+                    window.location.href = `tracker.html?id=${query}`;
+                } else {
+                    window.location.href = `search-results.html?q=${query}`;
+                }
+            }
         }
     </script>
 </body>
